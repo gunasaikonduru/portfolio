@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guna Sai | Creative Full-Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Guna Sai, Creative Full-Stack Developer specializing in 3D web experiences, modern user interfaces, and robust backend engineering.">
+  
+  <!-- Google Fonts: Space Grotesk (Tech/Futuristic Headings) & Inter (Clean Body Text) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="index.css">
+  
+  <!-- GSAP for core smooth animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  
+  <!-- Import Map for Three.js (Modern ES Modules) -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.147.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Custom Glowing Cursor -->
+  <div id="custom-cursor"></div>
+  <div id="custom-cursor-dot"></div>
+
+  <!-- Preloader Screen -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-title">&lt;GUNA SAI /&gt;</div>
+      <div class="preloader-bar-container">
+        <div class="preloader-bar"></div>
+      </div>
+      <div class="preloader-status">Initializing 3D Universe...</div>
+    </div>
+  </div>
+
+  <!-- Background 3D Canvas -->
+  <canvas id="three-bg-canvas"></canvas>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">&lt;GS /&gt;</a>
+      <nav>
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-sm btn-outline">Hire Me</a>
+      </div>
+      <!-- Mobile Nav Toggle -->
+      <button class="mobile-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section id="hero">
+      <div class="section-container hero-grid">
+        <div class="hero-info">
+          <div class="badge fade-in-element">Available for Opportunities</div>
+          <h1 class="hero-title fade-in-element">
+            Building the <span class="gradient-text">Future</span> of the Web
+          </h1>
+          <p class="hero-subtitle fade-in-element">
+            I am a Creative Full-Stack Developer crafting immersive 3D digital experiences, elegant user interfaces, and robust cloud architectures.
+          </p>
+          <div class="hero-actions fade-in-element">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Let's Connect</a>
+          </div>
+        </div>
+        <div class="hero-visual fade-in-element">
+          <!-- Container for the 3D spinning crystal -->
+          <div id="three-hero-container"></div>
+          <!-- Orbit hint -->
+          <div class="orbit-hint">Drag to interact with 3D crystal</div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span class="mouse-icon"><span class="mouse-wheel"></span></span>
+        <span class="scroll-text">Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">The fusion of engineering logic and creative expression</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card glass-card">
+            <h3>My Philosophy</h3>
+            <p>
+              I believe web applications shouldn't just be functional—they should be memorable. By combining structured backend systems with fluid, interactive frontend components (and 3D rendering), I create digital spaces that leave a lasting impression.
+            </p>
+            <p>
+              Whether it's building performant database schemas, developing responsive user interfaces, or sculpting interactive WebGL scenes, I focus on detail, speed, and premium user experience.
+            </p>
+          </div>
+          <div class="skills-card glass-card">
+            <h3>My Core Stack</h3>
+            <div class="skills-category">
+              <h4>Frontend & 3D</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">HTML5 / CSS3</span>
+                <span class="skill-tag">JavaScript (ES6+)</span>
+                <span class="skill-tag">Three.js / WebGL</span>
+                <span class="skill-tag">React.js</span>
+                <span class="skill-tag">GSAP Animations</span>
+              </div>
+            </div>
+            <div class="skills-category">
+              <h4>Backend & Databases</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">Node.js / Express</span>
+                <span class="skill-tag">Python / Django</span>
+                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">PostgreSQL / MongoDB</span>
+                <span class="skill-tag">GraphQL</span>
+              </div>
+            </div>
+            <div class="skills-category">
+              <h4>Tools & Platforms</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">AWS / Vercel</span>
+                <span class="skill-tag">Linux / Shell</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">A collection of creative solutions and backend engineering</p>
+        </div>
+        <div class="projects-grid" id="projects-container">
+          <!-- Projects dynamically loaded via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">My Journey</h2>
+          <p class="section-subtitle">Work experience and milestones</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-line"></div>
+          
+          <div class="timeline-item left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="time-period">2024 - Present</span>
+              <h3>Lead Creative Engineer</h3>
+              <h4 class="company">Nexus Technologies</h4>
+              <p> Spearheaded development of WebGL-based product customizers, increasing user engagement by 40%. Built highly secure Node.js APIs serving 100k+ daily users.</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="time-period">2022 - 2024</span>
+              <h3>Full-Stack Developer</h3>
+              <h4 class="company">Synthetix Software</h4>
+              <p>Created responsive React applications integrated with Django backend systems. Orchestrated deployment migrations to AWS, reducing server response latencies by 25%.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <span class="time-period">2020 - 2022</span>
+              <h3>Junior Frontend Developer</h3>
+              <h4 class="company">Aether Design Lab</h4>
+              <p>Designed clean, interactive landing pages using vanilla HTML/CSS/JS and GSAP. Translated UI mocks into semantic, responsive code with perfect fidelity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Let's build something exceptional together</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info glass-card">
+            <h3>Let's collaborate</h3>
+            <p>I'm always open to discussing creative design ideas, software architectures, or potential employment opportunities.</p>
+            
+            <div class="contact-methods">
+              <div class="method-item">
+                <span class="method-icon">✉</span>
+                <div>
+                  <span class="method-label">Email</span>
+                  <a href="mailto:gunasai@example.com" class="method-link">gunasai@example.com</a>
+                </div>
+              </div>
+              <div class="method-item">
+                <span class="method-icon">⛳</span>
+                <div>
+                  <span class="method-label">Location</span>
+                  <span class="method-value">Hyderabad, India</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <a href="#" class="social-link" title="GitHub">GitHub</a>
+              <a href="#" class="social-link" title="LinkedIn">LinkedIn</a>
+              <a href="#" class="social-link" title="Twitter">Twitter</a>
+            </div>
+          </div>
+          
+          <div class="contact-form-container glass-card">
+            <form id="portfolio-contact-form">
+              <div class="form-group">
+                <label for="form-name">Your Name</label>
+                <input type="text" id="form-name" required placeholder="John Doe">
+              </div>
+              <div class="form-group">
+                <label for="form-email">Your Email</label>
+                <input type="email" id="form-email" required placeholder="johndoe@example.com">
+              </div>
+              <div class="form-group">
+                <label for="form-message">Your Message</label>
+                <textarea id="form-message" rows="5" required placeholder="Tell me about your project..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            </form>
+            <div id="form-success-msg" class="success-message">
+              <span>✓</span> Message sent successfully! I will get back to you shortly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Details Modal (Glow Popup) -->
+  <div id="project-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content glass-card">
+      <button class="modal-close" aria-label="Close Modal">&times;</button>
+      <div class="modal-body" id="modal-project-details">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2026 Guna Sai. All rights reserved.</p>
+      <p class="credits">Crafted with Three.js, CSS Grid, and Passion.</p>
+    </div>
+  </footer>
+
+  <!-- App Logic Scripts -->
+  <script type="module" src="src/three-bg.js"></script>
+  <script type="module" src="src/three-hero.js"></script>
+  <script type="module" src="src/main.js"></script>
+
+</body>
+</html>
